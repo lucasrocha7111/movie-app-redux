@@ -2,7 +2,7 @@ import React from 'react'
 import { View, TouchableOpacity, Text } from 'react-native'
 import { connect } from 'react-redux'
 import { Style } from '../../styles/Style'
-import * as HeaderActions from '../../store/actions/menu'
+import { Creators as HeaderActions }  from '../../store/ducks/menu'
 
 const Header = ({ menu, dispatch }) => {
 
