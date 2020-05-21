@@ -1,30 +1,21 @@
-export const Types = {
-    SET_ACTIVE_MENU: 'menu/SET_ACTIVE_MENU'
-}
+import { createActions, createReducer } from 'reduxsauce'
+
+export const { Types, Creators } = createActions({
+    setMenu: ['typeSelected']
+})
 
 const INITIAL_STATE = {
     options: [{title: 'Movie', value: 'movie'}, {title: 'TV', value: 'tv'}],
     typeSelected: 'movie'
 }
 
-function reducer(state = INITIAL_STATE, action) {
-    if(action.type === Types.SET_ACTIVE_MENU) {
-        return {
-            ...state, typeSelected: action.typeSelected
-        }
+const setMenu = (state = INITIAL_STATE, action) => (
+    {
+        ...state, typeSelected: action.typeSelected
     }
-    return state
-}
+)
 
-export default reducer
-
-export const Creators = {
-    setMenu: (typeSelected) => (
-        {
-            type: Types.SET_ACTIVE_MENU,
-            typeSelected
-        }
-    )
-}
-
-
+export default createReducer(INITIAL_STATE, {
+        [Types.SET_MENU]: setMenu
+    }
+)
