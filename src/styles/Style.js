@@ -2,7 +2,7 @@
 import { StyleSheet, Dimensions } from 'react-native'
 import * as Colors from './Colors'
 
-const WIDTH = Dimensions.get('screen').width
+export const WIDTH = Dimensions.get('screen').width
 
 export const Style = StyleSheet.create({
     container: {
