@@ -24,6 +24,27 @@ export const Style = StyleSheet.create({
         shadowOpacity: 0.20,
         shadowRadius: 7.41,
     },
+    textInput: {
+        borderRadius: 2,
+        borderWidth: 0.5,
+        borderColor: Colors.GRAY_MEDIUM,
+        paddingVertical: 10,
+        marginBottom: 20,
+        paddingHorizontal: 10,
+    },
+    textSearch: {
+        paddingVertical: 10,
+        fontSize: 16
+    },
+    closeContainer: {
+        flexDirection: 'row', 
+        width: '100%', 
+        justifyContent: 'flex-end',
+        marginBottom: 4
+    },
+    closeFont: {
+        fontSize: 28
+    },
     image: {
         width: WIDTH - 40, 
         height: 210,

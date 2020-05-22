@@ -2,13 +2,15 @@ import { createActions, createReducer } from 'reduxsauce'
 
 export const { Types, Creators } = createActions({
     setMenu: ['typeSelected'],
-    setIsFetching: ['isFetching']
+    setIsFetching: ['isFetching'],
+    setSearchText: ['searchText']
 })
 
 const INITIAL_STATE = {
     options: [{title: 'Movie', value: 'movie'}, {title: 'TV', value: 'tv'}],
     typeSelected: 'movie',
     isFetching: true,
+    searchText: ''
 }
 
 const setMenu = (state = INITIAL_STATE, action) => (
@@ -24,8 +26,15 @@ const setIsFetching = (state = INITIAL_STATE, action) => (
     }
 )
 
+const setSearchText = (state = INITIAL_STATE, action) => (
+    {
+        ...state, searchText: action.searchText
+    }
+)
+
 export default createReducer(INITIAL_STATE, {
         [Types.SET_MENU]: setMenu,
-        [Types.SET_IS_FETCHING]: setIsFetching
+        [Types.SET_IS_FETCHING]: setIsFetching,
+        [Types.SET_SEARCH_TEXT]: setSearchText
     }
 )
