@@ -5,7 +5,7 @@ import { WIDTH } from './Style'
 
 const BannerStyle = StyleSheet.create({
     bannerContainer: {
-        marginVertical: 20
+        marginBottom: 20
     },
     imageBanner: {
         width: WIDTH - 40,
