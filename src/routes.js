@@ -2,7 +2,7 @@ import * as React from 'react';
 import { createStackNavigator } from '@react-navigation/stack'
 
 import { Home } from './scenes/home/Home'
-// import VideoDetail from './screens/moviesAndTv/videoDetail'
+import VideoDetail from './scenes/details/detail'
 
 const Stack = createStackNavigator();
 
@@ -12,7 +12,7 @@ export function MyStack() {
         <Stack.Screen name="Home" component={Home} options={{
           headerShown: false
         }} />
-        {/* <Stack.Screen name="Detail" component={VideoDetail} /> */}
+        <Stack.Screen name="Detail" component={VideoDetail} />
     </Stack.Navigator>
   );
 }

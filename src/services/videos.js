@@ -1,22 +1,25 @@
 import { RestClient } from '../utils/restClient'
 import { API_KEY } from '../utils/constants'
+import { VideoUtil } from '../utils/videoutil'
 
+const lng = VideoUtil.getLanguage()
+const LNG_STRING = `language=${lng}`
 export class VideoService {
 
-    search = (query, type) => {
-        return RestClient.get(`/search/${type}?api_key=${API_KEY}&query=${query}`)
+    static search = (query, type) => {
+        return RestClient.get(`/search/${type}?api_key=${API_KEY}&query=${query}&${LNG_STRING}`)
     }
 
-    genres = (type) => {
-        return RestClient.get(`/genre/${type}/list?api_key=${API_KEY}`)
+    static genres = (type) => {
+        return RestClient.get(`/genre/${type}/list?api_key=${API_KEY}&${LNG_STRING}`)
     }
 
-    discover = (type) => {
-        return RestClient.get(`/discover/${type}?api_key=${API_KEY}`)
+    static discover = (type) => {
+        return RestClient.get(`/discover/${type}?api_key=${API_KEY}&${LNG_STRING}`)
     }
 
-    trends = (type) => {
-        return RestClient.get(`/trending/${type}/day?api_key=${API_KEY}`)
+    static trends = (type) => {
+        return RestClient.get(`/trending/${type}/day?api_key=${API_KEY}&${LNG_STRING}`)
     }
 
 }
