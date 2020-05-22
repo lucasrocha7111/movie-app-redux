@@ -1,6 +1,6 @@
 import React from 'react'
 import { TouchableOpacity, Image } from 'react-native'
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native'
 import { IMAGE_PATH } from '../../utils/constants'
 
 const VideoItem = ( data ) => {
